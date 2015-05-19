@@ -1,3 +1,16 @@
+// CHALLENGE 5: Filtered LS
+    var fs = require('fs')
+    var path = require('path')
+    
+    fs.readdir(process.argv[2], function (err, list) {
+      list.forEach(function (file) {
+        if (path.extname(file) === '.' + process.argv[3])
+          console.log(file);
+      })
+    });
+
+/*
+
 // CHALLENGE 4: My First Async I/O!
 var fs = require('fs');
 //the 1st two args returned are always 'node' then the home path so start 
